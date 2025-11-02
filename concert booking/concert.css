@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(26, 27, 27);
+}
+
+.form {
+    margin-top: 20px;
+    padding: white;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    width: 250px;
+    height: 190px;
+    box-shadow: 0px 0px 5px 1px grey;
+    margin: 0 auto;
+}
+
+form {
+    margin-top: 25px;
+}
+
+h1, ol{
+    margin-bottom: 0px;
+    color: white;
+}
+
+h2, ol{
+    margin-left: 350px;
+    color: white;
+}
+
+select, input {
+    margin-bottom: 10px;
+}
+
+.age {
+    height: 19px;
+    width: 163px;
+    background-color: lightgrey;
+}
+
+label {
+    color: white;
+}
+
+.subBtn {
+    background-color: lightgrey;
+    height: 25px; width: 200px; 
+    margin-bottom: 20px;
+}
+
+select {
+    height: 25px;
+    width: 150px;
+}
+
+.table, td, th {
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: 35%;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+.table{
+    margin-left: 35px;
+}
+
+.ticket {
+    background-image: url(https://th.bing.com/th/id/OIP.8QwMGj7uqi-bkQD-a0j00AHaEK?rs=1&pid=ImgDetMain);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 30px;
+    padding: 20px white;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    width: 400px;
+    height: 120px;
+    box-shadow: 2px 2px 20px 1px lightgrey;
+    margin-left: 350px;
+    margin-bottom: -50px;
+}
+
+.ticket, .table-container {
+    display: flex;
+}
+
+.downloadBtn {
+    background-color: green;
+    width : 140px;
+    height: 30px;
+    margin-right: 180px;
+    margin-top: -40px;
+    border-radius: 10px;
+    border: none;
+}
