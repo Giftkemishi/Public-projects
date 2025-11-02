@@ -1,0 +1,36 @@
+
+body {
+    background-color:rgb(210, 210, 210);
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: left;
+}
+
+input[type=number] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+    border-top: 2px solid red;
+}
+
+button{
+    padding: 10px 100px;
+    border-radius: 8px;
+    background-color: rgb(120, 120, 120);
+    color:white;
+}
+
+.resultDiv {
+    color: red;
+}
