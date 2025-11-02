@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+	<html>
+		
+		<head>
+		
+			<meta charset="UTF-8">
+			<meta name="viewport">
+		
+			<title>RPS Game</title>
+			
+			<link rel="stylesheet" type="text/css" href="RPS.css">
+		
+		</head>
+		
+		<body>
+		
+			<h1 style="color:white;">Let'z play RPS (rock, paper and scissors) game</h1><br>
+			
+			<h4><b style="padding:15px 30px; background:red;color:white; margin: 20px;">Rock</b><b style="padding: 15px 30px; background: green;color:white; margin: 20px;">Paper</b><b style="padding:15px 30px; background: yellow; margin: 20px;"> Scissor</b></h4><br>
+
+			<p style="color:white;">select weapon of your choice</p>
+		
+			<form id="RPS-Game">
+			
+				<p>
+					<label> <input id="R" type="radio" name="game" value="Rock"> </span><u> Rock </u></label>
+					<label> <input id="P" type="radio" name="game" value="Paper"><u> Paper </u></label>
+					<label> <input id="S" type="radio" name="game" value="Scissor"><u> Scissor </u></label>
+				</p>
+				
+				<button type="button" id="submitBtn">Fight</button>
+				
+			</form>
+			
+			<div id="game-result"></div>
+		
+		
+			<script src="RPS.js"> </script>
+			
+		</body>
+	
+	</html>
