@@ -1,0 +1,26 @@
+HALLA is the social media platform.
+You can use to socialise with friends and family or people who are closer to you. you can also use it to find new friends
+
+To have access to Halla you need to create an account on sign in page or if you already have an account you can log in to continue.
+
+Inside halla there is a home page where you can see posts of friends or thier thoughts you can also share yours too.
+
+secons poage it is an inbox where you can text friends or family you have added, to text you seed to send friend request. 
+but firstly the request reciever need to accept the request in order to see the posts and to bve able to message
+
+third page it is notification page where you will recieve notification from friend or family who have tagged you on their posts, sent you friend requests or other updates etc.
+
+fourth page it is a page where it is your profile including profile setting, where you can change password, change profile details, and profile pictures, or edit/write your posts in there. etc
+
+Halla is very easy to use, user friendly and it protects user information
+you can suggest Halla to you friends and family, it is availabler for all operating system or devices.
+
+in folder:
+    login page - where user login the account created
+    signin page - where user creates the account 
+    logout - it handles the logout of the session
+    reset password page - where use can reset password if forgotten 
+    dashboard - where everything/activities is/are handled
+    wassup_db - which handles the database of the application
+    readme - which has the instruction of the application
+    uploads folder - which stores the media uploaded
