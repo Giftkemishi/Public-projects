@@ -1,0 +1,210 @@
+
+<LogInPage>:
+
+    email: email
+    password: password
+
+    canvas.before:
+        Color:
+            rgba: 0.235, 0.701, 0.443, 1 # 0, 0.717, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+
+        orientation: "vertical"
+        spacing: 50
+        padding: 20
+        size_hint: 0.7, None
+        #size: 700, 300
+        #width: 1000
+        height: self.minimum_height
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        canvas.before:
+            # Shadow
+            Color:
+                rgba: 0, 0, 0, 0.25   # semi-transparent black
+            RoundedRectangle:
+                pos: self.x + 5.5, self.y - 5.5   # offset for shadow
+                size: self.width, self.height
+                radius: [20]
+
+            # Main background
+            Color:
+                rgba: 0.705, 0.705, 0.705, 1   # light gray background
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [20]
+
+        Label: 
+            text: "Log In"
+            font_size: 40
+            size_hint: None, None
+            height: 50
+            color: 0, 0, 0, 1
+            pos_hint: {"center_x": 0.1, "center_y": 0.7}
+
+        BoxLayout:
+            size_hint: 0.8, None
+            height: 50
+            orientation: "horizontal"
+            spacing: 10
+            #pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            
+            Label:
+                text: "Email:"
+                size_hint: 0.3, None
+                color: 0, 0, 0, 1
+                height: 40
+                halign: "left"
+
+            BoxLayout:
+                size_hint: 1, None
+                height: 40
+                
+                canvas.before:
+                    Color:
+                        rgba: 0.600, 0.600, 0.600, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+
+                TextInput:
+                    id: email
+                    size_hint: 1, None
+                    height: 40
+                    padding: [20, 8, 10, 0]
+                    background_color: 0, 0, 0, 0
+                    cursor: 0, 0, 0, 1
+                    background_normal: ""
+                    background_down: ""
+                    background_active: ""
+                    multiline: False
+
+        BoxLayout:
+            size_hint: 0.8, None
+            height: 50
+            orientation: "horizontal"
+
+
+            Label:
+                text: "Password:"
+                size_hint: 0.3, None
+                color: 0, 0, 0, 1
+                height: 40
+                halign: "left"
+
+            BoxLayout:
+                size_hint: 1, None
+                height: 40
+                
+                canvas.before:
+                    Color:
+                        rgba: 0.600, 0.600, 0.600, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+            
+                TextInput:
+                    id: password
+                    size_hint: 1, None
+                    height: 40
+                    padding: [20, 8, 10, 0]
+                    multiline: False
+                    background_color: 0, 0, 0, 0
+                    background_normal: ""
+                    background_down: ""
+                    background_active: ""
+                    cursor: 0, 0, 0, 1
+                    password: True
+
+        Button:
+            text: "Create an Account"
+            size_hint: 0.8, None
+            height: 40
+            background_color: 0, 0, 0, 0
+            color: 0, 0, 0, 1
+            background_down: ""
+            background_active: ""
+            background_normal: ""
+            padding: [0, 0, 0, 70] # left top, right, bottom
+            on_release: root.go_to_signin()
+
+        BoxLayout:
+            size_hint: 0.8, None
+            height: 40
+            orientation: "horizontal"
+
+            Widget:
+                size_hint: 0.24, None
+                height: 40
+
+            BoxLayout:
+                size_hint: 0.8, None
+                height: 40
+                padding: [0, 0, 0, 70]
+
+                Button:
+                    text: "Submit"
+                    size_hint: 0.8, None
+                    height: 40
+                    background_color: 0, 0, 0, 0
+                    background_normal: ""
+                    background_active: ""
+                    background_down: ""
+                    #padding: [0, 0, 0, 0] # left, top, right, bottom
+                    #pos_hint: {"y": 0.3}
+                    on_release: root.SignedIn()
+                    color: 1, 1, 1, 1
+                    canvas.before:
+                        Color:
+                            rgba: 0.267, 0.566, 0.0, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    
+<WelcomePage>:
+
+    canvas.before:
+        Color:
+            rgba: 0.235, 0.701, 0.443, 1 # 0, 0.717, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint: 0.8, 0.8
+        orientation: "vertical"
+        pos_hint: {"x": 0.5, "y": 0.5}
+
+        Label:
+            text: "welcome"
+            font_size: 50
+            color: 0, 0, 0, 1
+            size_hint: 1, None
+            height: 70
+
+        Button:
+            text: "Back"
+            color: 1, 1, 1, 1
+            background_normal: ""
+            background_color: 0, 0, 0, 0
+            background_active: ""
+            background_down: ""
+            on_release: root.go_to_login()
+            canvas.before:
+                Color:
+                    rgba: 0.800, 0, 0, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10]
+
+
