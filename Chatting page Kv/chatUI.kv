@@ -1,0 +1,147 @@
+<BoxLabel@Label>:
+    size_hint_y: None
+    padding: 10, 10
+    text_size: self.width - 20, None
+    halign: 'left'
+    valign: 'middle'
+    bg_color: 0.2, 0.5, 0.9, 1
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [15]
+
+
+BoxLayout:
+    orientation: "vertical"
+    size_hint: 1, 1
+    canvas.before:
+        Color: 
+            rgba: 0.5, 0.5, 0.5, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: 'Say: "close manual chat" to exit.'
+        size_hint: 0.5, None
+        font_size: 20
+        height: 30
+        color: 0, 0, 0, 1
+
+    AnchorLayout: 
+        anchor_y: "center"
+        anchor_x: "center"
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 0.95, 0.95
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10]
+
+            ScrollView:
+                id: scroll
+                size_hint: 1, 1
+                do_scroll_x: False
+                do_scroll_y: True
+                bar_width: 10
+                scroll_y: 1
+
+                BoxLayout:
+                    id: messages_container
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint: 1, None
+                height: 100
+                padding: [0, 0, 0, 5]
+
+                Widget:
+                    size_hint: 0.1, None
+                    height: 70
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint: 1, None
+                    height: 100
+                    canvas.before:
+                        Color: 
+                            rgba: 0.7, 0.7, 0.7, 0.5
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    TextInput:
+                        id: chat_input
+                        size_hint: 1, 1
+                        padding: [10, 5, 10, 5]
+                        multiline: True
+                        background_color: 0, 0, 0, 0
+                        foreground_color: 1, 1, 1, 1
+                        background_down: ""
+                        background_active: ""
+                        background_normal: ""
+
+                Widget:
+                    size_hint: 0.05, None
+                    height: 70
+
+                BoxLayout:
+                    size_hint: 0.2, None
+                    height: 100
+                    orientation: "vertical"
+
+                    ToggleButton:
+                        id: theme_toggle
+                        size_hint: 1, None
+                        height: 40
+                        text: "Light"
+                        background_color: 0, 0, 0, 0
+                        background_down: ""
+                        background_active: ""
+                        background_normal: ""
+                        on_state: app.toggle_theme(self.state)
+                        canvas.before:
+                            Color:
+                                rgba: 1, 0.584, 0, 0.8
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
+                    Widget:
+                        size_hint: 1, None
+                        height: 10
+
+                    Button:
+                        text: "Send"
+                        size_hint: 1, None
+                        height: 50
+                        background_color: 0, 0, 0, 0
+                        color: 1, 1, 1, 1
+                        background_normal: ""
+                        background_down: ""
+                        background_active: ""
+                        on_release: app.send_message()
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0.6, 0, 1
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
+
+                Widget:
+                    size_hint: 0.01, None
+                    height: 70
