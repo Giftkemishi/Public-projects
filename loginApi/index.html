@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+
+            <title>My first Api App</title>
+
+            <style>
+
+                body {
+                    display: flex;
+                    justify-content: center;
+                    margin: 50px auto;
+                }
+
+                form {
+                    width: 70%;
+                    height: auto;
+                    padding: 20px;
+                    box-shadow: 0px 0px 50px -10px;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    overflow: none;
+                }
+
+                button {
+                    width: 100%;
+                    background-color: rgb(0, 204, 0);
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    height: 40px;
+                }
+
+                input {
+                    border-radius: 10px;
+                    border: 1px solid grey;
+                    height: 40px;
+                    width: 100%;
+                    padding-left: 10px;
+                }
+
+                a {
+                    margin-left: 40%;
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            <form>
+
+                <input id="Luser" type="text" placeholder="Enter username:"> <br><br>
+                <input id="Lpass" type="password" placeholder="Enter password:"> <br><br>
+
+                <div id="output"></div>
+
+                <a href="sign.html">Signin</a><br><br>
+
+                <button type="button" onclick="login()" id="LSbtn">Login</button>
+
+            </form>
+
+            <script>
+
+                const baseUrl = "http://127.0.0.1:8000";
+
+                function login() {
+                    const username = document.getElementById('Luser').value;
+                    const password = document.getElementById('Lpass').value;
+                    //const LBtn = dosument.getElementById('LSbtn');
+
+                    fetch(`${baseUrl}/login?username=${username}&password=${password}`, {
+                        method: "POST"
+                    })
+                    .then(res=> res.json())
+                    .then(data => {
+                        show(data);
+                        if(data.message) {
+                            window.location.href="wel.html";
+                        }
+                    });
+                    
+                }
+
+                function show(data) {
+                    document.getElementById('output').innerText = 
+                    JSON.stringify(data);
+
+                }
+
+            </script>
+
+        </body>
+
+    </html>

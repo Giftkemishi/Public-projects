@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+
+            <title>signIn</title>
+
+            <style>
+
+                body {
+                    display: flex;
+                    justify-content: center;
+                    margin: 50px auto;
+                }
+
+                form {
+                    width: 70%;
+                    height: auto;
+                    padding: 20px;
+                    box-shadow: 0px 0px 50px -10px;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    overflow: none;
+                }
+
+                button {
+                    width: 100%;
+                    background-color: rgb(0, 204, 0);
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    height: 40px;
+                }
+
+                input {
+                    border-radius: 10px;
+                    border: 1px solid grey;
+                    height: 40px;
+                    width: 100%;
+                    padding-left: 10px;
+                }
+
+                a {
+                    margin-left: 40%;
+                }
+
+            </style>
+            
+        </head>
+
+        <body>
+
+            <form>
+
+                <input id="Sname" type="text" placeholder="Enter username:"> <br><br>
+                <input id="age" type="number" placeholder="Enter age:"> <br><br>
+                <input id="Spass" type="password" placeholder="Enter password"> <br><br>
+                <input id="SCpass" type="password" placeholder="Comform password"> <br><br>
+                <div id="output"></div>
+
+                <a href="index.html">LogIn</a> <br><br>
+
+                <button type="button" onclick="signin()" id="SBnt">Submit</button>
+
+            </form>
+
+            <script>
+
+                const baseUrl = "http://127.0.0.1:8000";
+
+                function signin() {
+                    const user = document.getElementById('Sname').value;
+                    const age = document.getElementById('age').value;
+                    const Spass = document.getElementById('Spass').value;
+                    const CSpass = document.getElementById('SCpass').value;
+                    if (age >= 18) {
+                        if (Spass === CSpass) {
+                            fetch(`${baseUrl}/signin?username=${user}&password=${Spass}`, {
+                                method: "POST"
+                            })
+                            .then( res => res.json())
+                            .then(data =>{
+                                show(data);
+                                if (data.message){
+                                    alert("account created, log in!")
+                                    window.location.href="index.html";
+                                }
+                            });
+                            
+                        } else {
+                            alert("passowrds do not match");
+                        }
+                    } else {
+                        alert("You need to be 18 years old or over to register");
+                    }
+                }
+
+                function show(data) {
+                    document.getElementById('output').innerText = 
+                    JSON.stringify(data);
+                }
+
+            </script>
+            
+        </body>
+
+    </html>
