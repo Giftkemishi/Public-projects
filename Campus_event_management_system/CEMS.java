@@ -351,7 +351,6 @@ class Staff {
 class updateEvent extends Staff{
 
     //@SuppressWarnings("resource")
-    Scanner input;
 
     updateEvent(List<Event> events, Scanner input) {
         super(input);
